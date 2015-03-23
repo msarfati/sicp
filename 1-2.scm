@@ -40,4 +40,21 @@
 ;; this is an example of iteration
 ;; This is an abstraction of the time it takes any machine to calculate this. Of course, this ignores the magnitude and complexity of the numbers represented
 ;;
-;; my-sum1
+;; my-sum2 time  = O(X)
+;; 		   space = O(X)
+;; example of *linear recursion*
+;; space overhead with the recursive evaluations of the incrementer. Incrementers are proportional to input argument x
+;; Both of these are examples of *Iterative* and *Recursive* processes 
+;; ==========
+;; Iteration is a system that has all of its in its variables statefully defined. Iteration can be carried out even at interruption of the system.
+;; Recursion is more volatile, if the machine is disrupted
+;;
+
+(define (fib n) ;; Fibbonacci
+  (if (< n 2)
+  	n
+  	(+ (fib (- n 1))
+  	   (fib (- n 2)))))
+;; This Fibbonacci procedure is inefficient exponentially
+;;	 time  = O(fib(n))
+;;	 space = O(n)
