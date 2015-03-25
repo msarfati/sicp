@@ -58,3 +58,14 @@
 ;; This Fibbonacci procedure is inefficient exponentially
 ;;	 time  = O(fib(n))
 ;;	 space = O(n)
+
+
+;; Tower of Hanoi Problem
+(define (move n from to spare)
+  (cond ((= n 0) 'done)
+  		(else
+  		  (move (-1+ n) from spare to)
+  		  (print-move from to)
+  		  (move (-1+ n) spare to from))))
+
+(move  4 1 2 3)
